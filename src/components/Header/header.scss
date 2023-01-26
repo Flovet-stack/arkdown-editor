@@ -1,0 +1,139 @@
+@import "../../scss/variables";
+@import "../../scss/utils";
+
+header {
+  width: 100%;
+  height: 70px;
+  background-color: $header-bg;
+  display: flex;
+
+  .sidebar-toggler {
+    width: 70px;
+    height: 70px;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 5px;
+    background-color: $menu-toggler-bg;
+    position: relative;
+    cursor: pointer;
+    &:hover {
+      background-color: lighten($menu-toggler-bg, 10%);
+    }
+    span {
+      display: block;
+      height: 2px;
+      width: 30px;
+      background-color: $white;
+      margin: 0;
+      transition-duration: 1s;
+    }
+    span:nth-child(2) {
+      height: 2px;
+      transition-duration: 1s;
+    }
+
+    &:hover span:nth-child(2) {
+      height: 0;
+      transition-duration: 1s;
+    }
+
+    &.show span:nth-child(2) {
+      height: 0;
+      transition-duration: 1s;
+    }
+
+    &.show span:first-child {
+      position: absolute;
+      left: calc(50% - 15px);
+      top: 50%;
+      transform: rotateZ(45deg);
+    }
+
+    &.show span:last-child {
+      position: absolute;
+      left: calc(50% - 15px);
+      top: 50%;
+      transform: rotateZ(-45deg);
+    }
+  }
+
+  .menu-sub {
+    flex-grow: 1;
+    height: 100%;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5em;
+
+    .left {
+      .logo {
+        width: 130px;
+        margin-right: 1em;
+      }
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      .tab-info {
+        border-left: 1px solid $header-divider;
+        padding: 0 1.5em;
+        width: auto;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        > img {
+          height: 15px;
+        }
+        p {
+          font-size: 0.7rem;
+          color: $light-text;
+          font-weight: 200;
+          &.primary {
+            color: $primary;
+          }
+        }
+        input {
+          font-size: 0.8rem;
+          color: $white;
+          font-weight: 400;
+          width: auto;
+          flex: 1;
+          flex-grow: 1;
+          background-color: transparent;
+          border-bottom: 1px solid transparent;
+          &:focus {
+            border-bottom: 1px solid $primary;
+          }
+          &.exists {
+            color: $light-text !important;
+          }
+        }
+      }
+    }
+  }
+
+  .right {
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    .delete-button {
+      width: 30px;
+      height: 30px;
+      background-color: transparent;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $light-text;
+      cursor: pointer;
+      &:hover {
+        background-color: $menu-toggler-bg;
+        color: $primary;
+      }
+    }
+  }
+}

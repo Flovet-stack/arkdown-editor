@@ -1,0 +1,120 @@
+@import "../../scss/variables";
+@import "../../scss/utils";
+
+.sidebar-sub {
+  width: 250px;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  .top {
+    h4 {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: $sidebar-title;
+      margin-bottom: 2em;
+    }
+
+    > .btn {
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 2em;
+    }
+
+    nav {
+      width: 100%;
+      li {
+        width: 100%;
+        margin-bottom: 1em;
+        .document {
+          cursor: pointer;
+          padding: 1em 0;
+          width: auto;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          gap: 1em;
+          > img {
+            height: 15px;
+          }
+          p {
+            font-size: 0.7rem;
+            color: $light-text;
+            font-weight: 200;
+          }
+          h6 {
+            font-size: 0.8rem;
+            color: $white;
+            font-weight: 400;
+            width: auto;
+            flex: 1;
+            flex-grow: 1;
+            background-color: transparent;
+            margin-top: 0.3em;
+            &.open {
+              color: $primary;
+            }
+          }
+
+          &:hover {
+            h6 {
+              color: lighten($primary, 20%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .theme-toggler-con {
+    display: flex;
+    align-items: center;
+    .icon {
+      color: $white;
+      opacity: 0.3;
+      transition-duration: 0.5s;
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      &.show {
+        opacity: 1;
+      }
+    }
+    .toggler {
+      border: 3px solid $theme-toggle-bg;
+      width: 40px;
+      height: 20px;
+      background-color: $theme-toggle-bg;
+      margin: 0 0.5em;
+      border-radius: 50px;
+      position: relative;
+      box-sizing: initial;
+      cursor: pointer;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background-color: $white;
+        border-radius: 50%;
+        transition-duration: 0.5s;
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+    }
+
+    &.show {
+      .toggler {
+        transition-duration: 0.5s;
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        &::before {
+          left: 20px;
+        }
+      }
+    }
+  }
+}

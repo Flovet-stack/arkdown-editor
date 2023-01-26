@@ -1,0 +1,12 @@
+@import "../../../scss/variables";
+@import "../../../scss/utils";
+
+.btn {
+  &.grey {
+    color: $white;
+    background-color: $menu-toggler-bg;
+    &:hover {
+      background-color: lighten($menu-toggler-bg, 10%);
+    }
+  }
+}

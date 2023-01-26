@@ -1,0 +1,27 @@
+@import "../../scss/variables";
+@import "../../scss/utils";
+.markdown-editor {
+  width: calc(50vw - 125px);
+  max-width: 50vw;
+  height: 100%;
+  textarea {
+    width: 100%;
+    height: 100%;
+    font-size: 0.85rem;
+    font-weight: 300;
+    padding: 1em;
+    font-family: serif;
+    font-family: "Roboto Slab", serif;
+    letter-spacing: 2px;
+    line-height: 2;
+    background-color: transparent;
+    color: $white;
+
+    &.light {
+      color: darken($menu-toggler-bg, 40%);
+    }
+  }
+  &.show {
+    width: 50vw;
+  }
+}
