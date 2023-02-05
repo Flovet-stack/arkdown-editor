@@ -4,7 +4,7 @@ const DisplayRender = () => {
 
   return (
     <div className="display-render">
-      <h1>DisplayRender</h1>
+      <h1>Still to find a solution for this</h1>
     </div>
   );
 
