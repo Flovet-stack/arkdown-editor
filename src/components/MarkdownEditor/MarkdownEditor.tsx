@@ -12,7 +12,6 @@ const MarkdownEditor = () => {
   const handleUpdateState = (content: string) => {
     let tempCurrentDoc = state.currentDocument;
     tempCurrentDoc = { ...tempCurrentDoc, content };
-    // console.log(tempCurrentDoc);
 
     let tempDocs = [...state.documents];
 
