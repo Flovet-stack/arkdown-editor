@@ -28,24 +28,24 @@ const ModalLayout = (props: ModalProps) => {
     }, 500);
   };
 
-  const handleKeyPress = (e: any) => {
-    var key = e.key;
-    if (key === "Escape") {
-      setModalState({
-        ...modalState,
-        component: null,
-        showModal: false,
-      });
-    }
-  };
-
   useEffect(() => {
+    const handleKeyPress = (e: any) => {
+      var key = e.key;
+      if (key === "Escape") {
+        setModalState({
+          ...modalState,
+          component: null,
+          showModal: false,
+        });
+      }
+    };
+
     document.addEventListener("keydown", handleKeyPress, false);
 
     return () => {
       document.removeEventListener("keydown", handleKeyPress, false);
     };
-  }, []);
+  }, [modalState, setModalState]);
 
   return (
     <div className="app-modal">

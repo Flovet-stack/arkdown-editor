@@ -71,6 +71,7 @@ export interface InitialDefualtStateProps {
   documents: Document[];
   currentDocument: Document;
   notifications: Notification[];
+  displayContent: string;
 }
 
 export interface InitialModalStateProps {
@@ -91,6 +92,7 @@ const InitialState: InitialDefualtStateProps = {
   documents: defualtDocuments,
   currentDocument: defualtDocuments[0],
   notifications: [...defualtNotificactions],
+  displayContent: "",
 };
 
 interface ContextProps {

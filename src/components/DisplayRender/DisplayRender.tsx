@@ -1,13 +1,17 @@
+import useDefaultContext from "../../hooks/useDefualtContext";
 import "./display-render.scss";
 
 const DisplayRender = () => {
+  const { state } = useDefaultContext();
+
+  console.log(state.displayContent);
 
   return (
-    <div className="display-render">
-      <h1>Still to find a solution for this</h1>
-    </div>
+    <div
+      className="display-render"
+      dangerouslySetInnerHTML={{ __html: state.displayContent }}
+    ></div>
   );
-
 };
 
 export default DisplayRender;

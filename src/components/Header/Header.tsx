@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 import PrimaryButton from "../buttons/PrimaryButton/PrimaryButton";
 import DeleteModal from "../DeleteModal/DeleteModal";
+import { MarkdownService } from "../../services/markdown.service";
 
 const Header = () => {
   const { state, setState, modalState, setModalState } = useDefaultContext();
@@ -69,6 +70,19 @@ const Header = () => {
     });
   };
 
+  const handleConverdMarkdown = () => {
+    // call endpoint to conver string to markdown
+    MarkdownService.ConvertMarkdown(state.currentDocument.content).then(
+      (response) => {
+        setState({...state, displayContent: response.data})
+      }
+    );
+  };
+
+  useEffect(() => {
+    handleConverdMarkdown()
+  }, [])
+
   return (
     <header>
       <div
@@ -85,7 +99,7 @@ const Header = () => {
           <div className="tab-info">
             <img src={fileIcon} alt="document icon" />
             <div className="info">
-              <p>Document Name {JSON.stringify(state.showSidebar)}</p>
+              <p>Document Name</p>
               <input
                 type="text"
                 value={currentDocumentName}
@@ -109,7 +123,7 @@ const Header = () => {
             text="Save changes"
             icon={<FontAwesomeIcon icon={faSave} />}
             loading={false}
-            action={() => {}}
+            action={handleConverdMarkdown}
           />
         </div>
       </div>
