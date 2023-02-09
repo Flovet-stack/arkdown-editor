@@ -81,7 +81,11 @@ const Header = () => {
 
   useEffect(() => {
     handleConverdMarkdown();
-  }, [state.currentDocument]);
+  }, []);
+
+  useEffect(() => {
+    handleConverdMarkdown();
+  }, [state.currentDocument.id]);
 
   return (
     <header className={`${state.showSidebar ? "" : "full"}`}>

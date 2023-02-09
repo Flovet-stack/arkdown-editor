@@ -79,7 +79,7 @@ const InitialmodalState: InitialModalStateProps = {
 
 const InitialState: InitialDefualtStateProps = {
   // sidebar
-  showSidebar: true,
+  showSidebar: false,
   showLightTheme: true,
   showEditor: true,
   documents: defualtDocuments,

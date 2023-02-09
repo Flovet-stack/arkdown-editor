@@ -22,7 +22,7 @@ const EditorLayout = (props: EditorLayoutProps) => {
     {
       title: "markdown",
       component: <MarkdownEditor />,
-      showToggler: true,
+      showToggler: false,
     },
     {
       title: "preview",

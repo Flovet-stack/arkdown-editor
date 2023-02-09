@@ -48,11 +48,13 @@
         height: calc(100vh - 70px);
         display: flex;
         flex-direction: column;
-        width: 100%;  
+        width: 100%;
         flex-grow: 1;
         border-right: 1px solid $header-divider;
         overflow-x: hidden;
         transition-duration: 0.5s;
+        overflow-y: hidden;
+
         > .sub {
           height: 100%;
           min-width: calc(50vw - 125px);
