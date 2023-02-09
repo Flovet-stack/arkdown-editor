@@ -2,6 +2,7 @@
 @import "../../scss/variables";
 
 .display-render {
+  width: 100%;
   padding: 1rem 1.5rem;
   font-family: "Roboto Slab";
   font-style: normal;
@@ -21,6 +22,9 @@
     font-family: "Roboto Slab";
     font-style: normal;
     font-weight: 700;
+    &:first-child {
+      margin-top: 0;
+    }
   }
   h1 {
     font-size: 32px;

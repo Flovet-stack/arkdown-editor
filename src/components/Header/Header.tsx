@@ -74,17 +74,17 @@ const Header = () => {
     // call endpoint to conver string to markdown
     MarkdownService.ConvertMarkdown(state.currentDocument.content).then(
       (response) => {
-        setState({...state, displayContent: response.data})
+        setState({ ...state, displayContent: response.data });
       }
     );
   };
 
   useEffect(() => {
-    handleConverdMarkdown()
-  }, [])
+    handleConverdMarkdown();
+  }, [state.currentDocument]);
 
   return (
-    <header>
+    <header className={`${state.showSidebar ? "" : "full"}`}>
       <div
         onClick={handleToggleSidebar}
         className={`sidebar-toggler ${state.showSidebar ? "show" : ""}`}

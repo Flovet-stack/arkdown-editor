@@ -1,7 +1,8 @@
 @import "../../scss/variables";
 @import "../../scss/utils";
 .markdown-editor {
-  width: calc(50vw - 125px);
+  min-width: calc(50vw - 125px);
+  width: 100%;
   max-width: 50vw;
   height: 100%;
   textarea {
