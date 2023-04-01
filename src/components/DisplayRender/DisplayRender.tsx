@@ -8,7 +8,7 @@ const DisplayRender = () => {
 
   return (
     <div
-      className="display-render"
+      className={`display-render ${state.showLightTheme ? "light" : "dark"}`}
       dangerouslySetInnerHTML={{ __html: state.displayContent }}
     ></div>
   );

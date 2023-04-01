@@ -25,11 +25,11 @@ const NotificationCard = (props: notificationCardProps) => {
     setState({ ...state, notifications: tempNotifications });
   };
 
-  const autoCloseNotification = () => {
-    setTimeout(() => {
-      closeNotification();
-    }, props.notification.timeout);
-  };
+  // const autoCloseNotification = () => {
+  //   setTimeout(() => {
+  //     closeNotification();
+  //   }, props.notification.timeout);
+  // };
 
   useEffect(() => {
     // autoCloseNotification();

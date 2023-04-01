@@ -62,7 +62,7 @@ const Header = () => {
     setCurrentDocumentName(InputName.current.value);
   };
 
-  const handleOpenModal = () => {
+  const handleOpenDeleteModal = () => {
     setModalState({
       ...modalState,
       showModal: true,
@@ -71,20 +71,27 @@ const Header = () => {
   };
 
   const handleConverdMarkdown = () => {
+    setState({ ...state, isConverting: true });
     // call endpoint to conver string to markdown
     MarkdownService.ConvertMarkdown(state.currentDocument.content).then(
       (response) => {
-        setState({ ...state, displayContent: response.data });
+        setState({
+          ...state,
+          displayContent: response.data,
+          isConverting: false,
+        });
       }
     );
   };
 
   useEffect(() => {
     handleConverdMarkdown();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     handleConverdMarkdown();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.currentDocument.id]);
 
   return (
@@ -120,13 +127,14 @@ const Header = () => {
           </div>
         </div>
         <div className="right">
-          <div onClick={handleOpenModal} className="delete-button">
+          <div onClick={handleOpenDeleteModal} className="delete-button">
             <FontAwesomeIcon icon={faTrash} />
           </div>
           <PrimaryButton
             text="Save changes"
             icon={<FontAwesomeIcon icon={faSave} />}
-            loading={false}
+            loading={state.isConverting}
+            loadingText="Saving changes"
             action={handleConverdMarkdown}
           />
         </div>

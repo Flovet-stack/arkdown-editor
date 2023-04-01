@@ -65,6 +65,7 @@ export interface InitialDefualtStateProps {
   currentDocument: Document;
   notifications: Notification[];
   displayContent: string;
+  isConverting: boolean;
 }
 
 export interface InitialModalStateProps {
@@ -86,6 +87,7 @@ const InitialState: InitialDefualtStateProps = {
   currentDocument: defualtDocuments[0],
   notifications: [...defualtNotificactions],
   displayContent: "",
+  isConverting: false,
 };
 
 interface ContextProps {

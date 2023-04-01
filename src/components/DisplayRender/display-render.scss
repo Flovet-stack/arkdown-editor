@@ -10,7 +10,6 @@
   font-family: "Roboto Slab";
   font-style: normal;
   font-weight: 300;
-  font-size: 14px;
   line-height: 24px;
   padding-bottom: 4rem;
   overflow-y: auto;
@@ -27,9 +26,6 @@
     border-radius: 10px;
   }
 
-  &.light {
-    color: darken($menu-toggler-bg, 40%);
-  }
   div > * {
     margin-bottom: 1rem !important;
   }
@@ -37,11 +33,13 @@
   h2,
   h3,
   h4,
-  h5 {
+  h5,
+  h6 {
     margin: 1rem 0;
     font-family: "Roboto Slab";
     font-style: normal;
     font-weight: 700;
+    color: $white;
     &:first-child {
       margin-top: 0;
     }
@@ -72,12 +70,13 @@
     color: $primary;
   }
   p {
-    color: $color-700;
+    color: $white;
     margin-bottom: 0.5rem;
+    font-size: 1em;
   }
   li {
     list-style-position: inside;
-    color: $color-700;
+    color: $white;
   }
   ol,
   ul {
@@ -102,23 +101,51 @@
   blockquote p {
     font-size: 14px;
     line-height: 24px;
-    background: $color-200;
-    color: $color-700;
+    background: $dark-bg;
+    color: $white;
     border-radius: 4px;
     padding: 24px;
     border-left: 4px solid $primary;
     a {
       text-decoration: underline;
-      color: $color-700;
+      color: $white;
     }
   }
   pre {
-    background-color: $color-200;
-    color: $color-700;
+    background-color: $dark-bg;
+    color: $white;
     padding: 24px;
     border-radius: 4px;
   }
   pre p {
-    color: $color-700;
+    color: $white;
+  }
+
+  &.light {
+    color: darken($menu-toggler-bg, 40%);
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    li {
+      color: $color-700;
+    }
+    blockquote p {
+      background: $color-200;
+      color: $color-700;
+      a {
+        color: $color-700;
+      }
+    }
+    pre {
+      background-color: $color-200;
+      color: $color-700;
+    }
+    pre p {
+      color: $color-700;
+    }
   }
 }

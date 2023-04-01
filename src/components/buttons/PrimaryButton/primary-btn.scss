@@ -8,5 +8,8 @@
     &:hover {
       background-color: $primary-light;
     }
+    &:disabled {
+      background-color: $menu-toggler-bg;
+    }
   }
 }
